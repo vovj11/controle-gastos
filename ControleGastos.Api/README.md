@@ -12,7 +12,7 @@ A aplicação permite o gerenciamento de pessoas, categorias e transações fina
 
 - Back-end: C# com .NET Web API
 - Front-end: React com TypeScript (a ser implementado)
-- Banco de dados: SQL Server com Entity Framework (a ser configurado)
+- Banco de dados: SQL Server (LocalDB) com Entity Framework
 
 ---
 
@@ -63,9 +63,29 @@ Nesta etapa foram criadas as entidades principais do sistema e seus respectivos 
 
 As entidades foram modeladas considerando os relacionamentos entre pessoa, categoria e transações.
 
+## Etapa 3 - Configuração do banco de dados
+
+Nesta etapa foi configurado o Entity Framework com SQL Server.
+### Passos realizados:
+
+#### 3 - Configuração do Entity Framework e criação do banco:
+1. Instalação dos pacotes do Entity Framework
+  - Microsoft.EntityFrameworkCore
+  - Microsoft.EntityFrameworkCore.SqlServer
+  - Microsoft.EntityFrameworkCore.Tools
+2. Criação do AppDbContext
+3. Configuração da connection string
+4. Registro do DbContext no Program.cs
+5. Criação da primeira migration
+	- Add-Migration InitialCreate (diz como o banco deve ser baseado nas entidades)
+6. Criação do banco de dados
+	- Update-Database (aplica a migration e cria o banco de dados)
+
 ---
 
 ## Status atual
 
 ✔ Projeto criado e estruturado
-✔ Entidades e Enums implementados
+✔ Entidades e enums implementados
+✔ Banco de dados configurado com Entity Framework  
+✔ Migration inicial criada e aplicada  

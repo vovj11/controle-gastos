@@ -1,7 +1,7 @@
 ﻿using ControleGastos.Api.Models.Enums;
 
-namespace ControleGastos.Api.Models.Entities
-{
+namespace ControleGastos.Api.Models.Entities;
+
     public class Transaction
     {
         public int Id { get; set; }
@@ -18,4 +18,3 @@ namespace ControleGastos.Api.Models.Entities
         public Category Category { get; set; } = null!;
 
     }
-}

@@ -1,5 +1,4 @@
-﻿
-using ControleGastos.Api.Models.Enums;
+﻿using ControleGastos.Api.Models.Enums;
 
 namespace ControleGastos.Api.Models.Entities;
 

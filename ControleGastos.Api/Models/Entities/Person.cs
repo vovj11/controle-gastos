@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Transactions;
+using ControleGastos.Api.Models.Entities;
 
 namespace ControleGastos.Api.Models.Entities;
 
