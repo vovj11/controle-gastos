@@ -33,7 +33,7 @@ Nesta etapa foi criado o projeto base utilizando o template de API do ASP.NET Co
 
 ### Passos realizados:
 
-#### 1 - Projeto e Estrutura
+#### 1 - Projeto e Estrutura Inicial
 
 1. Criação do projeto "ControleGastos.Api" no Visual Studio
 2. Criação das pastas:
@@ -41,12 +41,31 @@ Nesta etapa foi criado o projeto base utilizando o template de API do ASP.NET Co
    - Models
    - Services
    - Data
-3. Execução da aplicação para verificar se está funcionar
+3. Execução da aplicação para verificar se está funcionando
 4. Acesso ao Swagger para testes iniciais efetuado com sucesso
 
+## Etapa 2 - Modelagem das entidades
+
+Nesta etapa foram criadas as entidades principais do sistema e seus respectivos enums.
+
+### Passos realizados:
+
+#### 2 - Estrutura criada:
+
+1. Entities:
+  - Person
+  - Category
+  - Transaction
+
+2. Enums:
+  - TransactionType (Receita, Despesa)
+  - CategoryPurpose (Receita, Despesa, Ambas)
+
+As entidades foram modeladas considerando os relacionamentos entre pessoa, categoria e transações.
 
 ---
 
 ## Status atual
 
 ✔ Projeto criado e estruturado
+✔ Entidades e Enums implementados
