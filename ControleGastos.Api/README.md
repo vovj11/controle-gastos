@@ -77,9 +77,26 @@ Nesta etapa foi configurado o Entity Framework com SQL Server.
 3. Configuração da connection string
 4. Registro do DbContext no Program.cs
 5. Criação da primeira migration
-	- Add-Migration InitialCreate (diz como o banco deve ser baseado nas entidades)
+  - Add-Migration InitialCreate (diz como o banco deve ser baseado nas entidades)
 6. Criação do banco de dados
-	- Update-Database (aplica a migration e cria o banco de dados)
+  - Update-Database (aplica a migration e cria o banco de dados)
+
+## Etapa 4 - Implementação de Services
+
+Nesta etapa foi criada a camada de serviços responsável pela lógica de negócio da aplicação.
+
+### Passos realizados:
+
+#### 4 - Implementação do PersonService:
+
+1. Criação do PersonService
+2. Implementação dos métodos:
+  - Criar pessoa
+  - Listar pessoas
+  - Buscar por ID
+  - Atualizar pessoa
+  - Deletar pessoa
+3. Registro do service no Program.cs
 
 ---
 
@@ -89,3 +106,5 @@ Nesta etapa foi configurado o Entity Framework com SQL Server.
 ✔ Entidades e enums implementados
 ✔ Banco de dados configurado com Entity Framework  
 ✔ Migration inicial criada e aplicada  
+✔ PersonService implementado com operações de CRUD  
+✔ Injeção de dependência configurada

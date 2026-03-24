@@ -1,5 +1,6 @@
 using ControleGastos.Api.Data;
 using Microsoft.EntityFrameworkCore;
+using ControleGastos.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllers();
 // Configura o EF para usar o SQL Server com a string de conexão definida no appsettings.json
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Registra o serviço de pessoa para injeção de dependência
+builder.Services.AddScoped<PersonService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
