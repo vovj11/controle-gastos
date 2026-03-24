@@ -21,10 +21,12 @@ namespace ControleGastos.Api.Services;
             if(string.IsNullOrWhiteSpace(category.Description))
             throw new Exception("Descrição é obrigatória.");
 
-            // Adiciona e Salva no banco
+            // Adiciona a Categoria ao contexto
             _context.Categories.Add(category);
+            // Salva as alterações no banco de dados
             _context.SaveChanges();
 
+            // Retorna a categoria criada já com o ID gerado pelo banco de dados
             return category;
         }
 

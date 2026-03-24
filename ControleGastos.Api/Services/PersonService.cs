@@ -15,8 +15,12 @@ namespace ControleGastos.Api.Services;
         // Criar/Adicionar uma pessoa no banco de dados
         public Person Create(Person person)
         {
+            // Adiciona a Pessoa ao contexto
             _context.Persons.Add(person);
+            // Salva as alterações no banco de dados
             _context.SaveChanges();
+            
+            // Retorna a pessoa criada já com o ID gerado pelo banco de dados
             return person;
         }
         

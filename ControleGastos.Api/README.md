@@ -54,13 +54,13 @@ Nesta etapa foram criadas as entidades principais do sistema e seus respectivos 
 ##### 2.1 - Estrutura criada:
 
 1. Entities:
-  - Person
-  - Category
-  - Transaction
+   - Person
+   - Category
+   - Transaction
 
 2. Enums:
-  - TransactionType (Receita, Despesa)
-  - CategoryPurpose (Receita, Despesa, Ambas)
+   - TransactionType (Receita, Despesa)
+   - CategoryPurpose (Receita, Despesa, Ambas)
 
 As entidades foram modeladas considerando os relacionamentos entre pessoa, categoria e transações.
 
@@ -71,16 +71,16 @@ Nesta etapa foi configurado o Entity Framework com SQL Server.
 
 ##### 3.1 - Configuração do Entity Framework e criação do banco:
 1. Instalação dos pacotes do Entity Framework
-  - Microsoft.EntityFrameworkCore
-  - Microsoft.EntityFrameworkCore.SqlServer
-  - Microsoft.EntityFrameworkCore.Tools
+   - Microsoft.EntityFrameworkCore
+   - Microsoft.EntityFrameworkCore.SqlServer
+   - Microsoft.EntityFrameworkCore.Tools
 2. Criação do AppDbContext
 3. Configuração da connection string
 4. Registro do DbContext no Program.cs
 5. Criação da primeira migration
-  - Add-Migration InitialCreate (diz como o banco deve ser baseado nas entidades)
+   - Add-Migration InitialCreate (diz como o banco deve ser baseado nas entidades)
 6. Criação do banco de dados
-  - Update-Database (aplica a migration e cria o banco de dados)
+   - Update-Database (aplica a migration e cria o banco de dados)
 
 ### Etapa 4 - Implementação de Services
 
@@ -92,18 +92,32 @@ Nesta etapa foi criada a camada de serviços responsável pela lógica de negóc
 
 1. Criação do PersonService
 2. Implementação dos métodos:
-  - Criar pessoa
-  - Listar pessoas
-  - Buscar por ID
-  - Atualizar pessoa
-  - Deletar pessoa
+   - Criar pessoa
+   - Listar pessoas
+   - Buscar por ID
+   - Atualizar pessoa
+   - Deletar pessoa
 3. Registro do service no Program.cs
 
 ##### 4.2 - Implementação do CategoryService
 
 Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
 
-### Passos realizados:
+1. Criação do CategoryService
+2. Implementação dos métodos:
+   - Criar categoria
+   - Listar categorias
+3. Registro do service no Program.cs
+
+##### 4.3 - Implementação do TransactionService
+1. Criação do TransactionService
+2. Implementação dos métodos:
+   - Criar transação
+   - Listar transações
+3. Regras de negócios implementadas:
+   - O valor da transação deve ser positivo
+   - Menores de idade não podem possuir receitas
+   - A categoria deve ser compatível com o tipo da transação
 
 1. Criação do CategoryService
 2. Implementação dos métodos:
@@ -121,4 +135,5 @@ Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
 - Migration inicial criada e aplicada  
 - PersonService implementado com operações de CRUD  
 - CategoryService implementado com criação (create) e listagem (read)
+- TransactionService implementado com regras de negócio
 - Injeção de dependência configurada

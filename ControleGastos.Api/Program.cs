@@ -13,6 +13,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<PersonService>();
 // Registra o serviço de categoria para injeção de dependência
 builder.Services.AddScoped<CategoryService>();
+// Registra o serviço de transação para injeção de dependência
+builder.Services.AddScoped<TransactionService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
