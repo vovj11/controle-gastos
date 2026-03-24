@@ -34,7 +34,7 @@ Nesta etapa foi criado o projeto base utilizando o template de API do ASP.NET Co
 
 #### Passos realizados:
 
-##### 1 - Projeto e Estrutura Inicial
+##### 1.1 - Projeto e Estrutura Inicial
 
 1. Criação do projeto "ControleGastos.Api" no Visual Studio
 2. Criação das pastas:
@@ -51,7 +51,7 @@ Nesta etapa foram criadas as entidades principais do sistema e seus respectivos 
 
 #### Passos realizados:
 
-##### 2 - Estrutura criada:
+##### 2.1 - Estrutura criada:
 
 1. Entities:
   - Person
@@ -69,7 +69,7 @@ As entidades foram modeladas considerando os relacionamentos entre pessoa, categ
 Nesta etapa foi configurado o Entity Framework com SQL Server.
 #### Passos realizados:
 
-##### 3 - Configuração do Entity Framework e criação do banco:
+##### 3.1 - Configuração do Entity Framework e criação do banco:
 1. Instalação dos pacotes do Entity Framework
   - Microsoft.EntityFrameworkCore
   - Microsoft.EntityFrameworkCore.SqlServer
@@ -88,7 +88,7 @@ Nesta etapa foi criada a camada de serviços responsável pela lógica de negóc
 
 #### Passos realizados:
 
-##### 4 - Implementação do PersonService:
+##### 4.1 - Implementação do PersonService:
 
 1. Criação do PersonService
 2. Implementação dos métodos:
@@ -99,7 +99,7 @@ Nesta etapa foi criada a camada de serviços responsável pela lógica de negóc
   - Deletar pessoa
 3. Registro do service no Program.cs
 
-##### 5 - Implementação do CategoryService
+##### 4.2 - Implementação do CategoryService
 
 Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
 
@@ -115,10 +115,10 @@ Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
 
 ## Status atual
 
-✔ Projeto criado e estruturado
-✔ Entidades e enums implementados
-✔ Banco de dados configurado com Entity Framework  
-✔ Migration inicial criada e aplicada  
-✔ PersonService implementado com operações de CRUD  
-✔ CategoryService implementado com criação (create) e listagem (read)
-✔ Injeção de dependência configurada
+- Projeto criado e estruturado
+- Entidades e enums implementados
+- Banco de dados configurado com Entity Framework  
+- Migration inicial criada e aplicada  
+- PersonService implementado com operações de CRUD  
+- CategoryService implementado com criação (create) e listagem (read)
+- Injeção de dependência configurada
