@@ -11,6 +11,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Registra o serviço de pessoa para injeção de dependência
 builder.Services.AddScoped<PersonService>();
+// Registra o serviço de categoria para injeção de dependência
+builder.Services.AddScoped<CategoryService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

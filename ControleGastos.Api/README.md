@@ -27,13 +27,14 @@ O projeto foi organizado de forma simples, separando responsabilidades:
 
 ---
 
-## Etapa 1 - Criação do projeto
+## Etapas de desenvolvimento do Back-end
+### Etapa 1 - Criação do projeto
 
 Nesta etapa foi criado o projeto base utilizando o template de API do ASP.NET Core.
 
-### Passos realizados:
+#### Passos realizados:
 
-#### 1 - Projeto e Estrutura Inicial
+##### 1 - Projeto e Estrutura Inicial
 
 1. Criação do projeto "ControleGastos.Api" no Visual Studio
 2. Criação das pastas:
@@ -44,13 +45,13 @@ Nesta etapa foi criado o projeto base utilizando o template de API do ASP.NET Co
 3. Execução da aplicação para verificar se está funcionando
 4. Acesso ao Swagger para testes iniciais efetuado com sucesso
 
-## Etapa 2 - Modelagem das entidades
+### Etapa 2 - Modelagem das entidades
 
 Nesta etapa foram criadas as entidades principais do sistema e seus respectivos enums.
 
-### Passos realizados:
+#### Passos realizados:
 
-#### 2 - Estrutura criada:
+##### 2 - Estrutura criada:
 
 1. Entities:
   - Person
@@ -63,12 +64,12 @@ Nesta etapa foram criadas as entidades principais do sistema e seus respectivos 
 
 As entidades foram modeladas considerando os relacionamentos entre pessoa, categoria e transações.
 
-## Etapa 3 - Configuração do banco de dados
+### Etapa 3 - Configuração do banco de dados
 
 Nesta etapa foi configurado o Entity Framework com SQL Server.
-### Passos realizados:
+#### Passos realizados:
 
-#### 3 - Configuração do Entity Framework e criação do banco:
+##### 3 - Configuração do Entity Framework e criação do banco:
 1. Instalação dos pacotes do Entity Framework
   - Microsoft.EntityFrameworkCore
   - Microsoft.EntityFrameworkCore.SqlServer
@@ -81,13 +82,13 @@ Nesta etapa foi configurado o Entity Framework com SQL Server.
 6. Criação do banco de dados
   - Update-Database (aplica a migration e cria o banco de dados)
 
-## Etapa 4 - Implementação de Services
+### Etapa 4 - Implementação de Services
 
 Nesta etapa foi criada a camada de serviços responsável pela lógica de negócio da aplicação.
 
-### Passos realizados:
+#### Passos realizados:
 
-#### 4 - Implementação do PersonService:
+##### 4 - Implementação do PersonService:
 
 1. Criação do PersonService
 2. Implementação dos métodos:
@@ -96,6 +97,18 @@ Nesta etapa foi criada a camada de serviços responsável pela lógica de negóc
   - Buscar por ID
   - Atualizar pessoa
   - Deletar pessoa
+3. Registro do service no Program.cs
+
+##### 5 - Implementação do CategoryService
+
+Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
+
+### Passos realizados:
+
+1. Criação do CategoryService
+2. Implementação dos métodos:
+   - Criar categoria
+   - Listar categorias
 3. Registro do service no Program.cs
 
 ---
@@ -107,4 +120,5 @@ Nesta etapa foi criada a camada de serviços responsável pela lógica de negóc
 ✔ Banco de dados configurado com Entity Framework  
 ✔ Migration inicial criada e aplicada  
 ✔ PersonService implementado com operações de CRUD  
+✔ CategoryService implementado com criação (create) e listagem (read)
 ✔ Injeção de dependência configurada
