@@ -125,6 +125,41 @@ Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
    - Listar categorias
 3. Registro do service no Program.cs
 
+### Etapa 5 - Criação dos Controllers
+
+Nessa etapa foi criado os controllers responsáveis por expor os endpoints da API, permitindo a comunicação com os services e a execução das regras de negócio.
+
+#### Passos realizados:
+
+##### 5.1 - Implementação do PersonController:
+1. Criação do PersonController
+2. Injeção do PersonService via Dependency Injection
+3. Implementação dos endpoints:
+   - Criação de pessoa (POST)
+   - Listagem de pessoas (GET)
+
+##### 5.2 - Implementação do CategoryController:
+1. Criação do CategoryController
+2. Injeção do CategoryService via Dependency Injection
+3. Implementação dos endpoints:
+   - Criação de categoria (POST)
+   - Listagem de categorias (GET)
+
+##### 5.3 - Implementação do TransactionController:
+1. Criação do TransactionController
+2. Injeção do TransactionService via Dependency Injection
+3. Implementação dos endpoints:
+   - Criação de transação (POST)
+   - Listagem de transações (GET)
+
+##### 5.4 - Testes realizados via swagger:
+1. Execução da aplicação
+2. Acesso ao Swagger para visualização dos endpoints
+3. Testes realizados para:
+   - Criação de registros
+   - Listagem de dados
+   - Validação das regras de negócio (erros e sucessos)
+
 ---
 
 ## Status atual
@@ -137,3 +172,6 @@ Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
 - CategoryService implementado com criação (create) e listagem (read)
 - TransactionService implementado com regras de negócio
 - Injeção de dependência configurada
+- Controllers implementados
+- Endpoints funcionando
+- Testes realizados via Swagger

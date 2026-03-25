@@ -1,4 +1,5 @@
-﻿using ControleGastos.Api.Models.Enums;
+﻿using System.Text.Json.Serialization;
+using ControleGastos.Api.Models.Enums;
 
 namespace ControleGastos.Api.Models.Entities;
 
@@ -11,10 +12,12 @@ namespace ControleGastos.Api.Models.Entities;
 
         // Foreign Key -> Pessoa
         public int PersonId { get; set; }
-        public Person Person { get; set; } = null!;
+        [JsonIgnore]
+        public Person? Person { get; set; }
 
         // Foreign Key -> Categoria
         public int CategoryId { get; set; }
-        public Category Category { get; set; } = null!;
+        [JsonIgnore]
+        public Category? Category { get; set; }
 
     }
