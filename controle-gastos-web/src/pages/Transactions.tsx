@@ -16,16 +16,17 @@ export function Transactions() {
     categoryId: 2,
   });
 
-  // Executa a função ao carregar a página para buscar as transações da API
+  // Função que busca as transações da API
+  const loadTransactions = async () => {
+    const data = await getTransactions();
+    setTransactions(data);
+  };
+
+  // Executa apenas na montagem do componente para carregar as transações iniciais
+  // Criei a função loadTransactions fora do useEffect para poder reutilizar
   useEffect(() => {
     loadTransactions();
   }, []);
-
-  // Função que busca as transações da API
-  async function loadTransactions() {
-    const data = await getTransactions();
-    setTransactions(data);
-  }
 
   // Função chamada ao enviar o formulário
   async function handleSubmit(e: React.FormEvent) {
@@ -50,8 +51,12 @@ export function Transactions() {
         personId: 1,
         categoryId: 2,
       });
-    } catch (error: any) {
-      alert(error?.message || "Erro ao criar transação");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        alert(error.message);
+      } else {
+        alert("Erro ao criar transação");
+      }
     }
   }
 
