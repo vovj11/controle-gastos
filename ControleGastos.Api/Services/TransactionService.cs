@@ -1,5 +1,6 @@
 ﻿using ControleGastos.Api.Data;
 using ControleGastos.Api.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleGastos.Api.Services;
 
@@ -55,7 +56,7 @@ namespace ControleGastos.Api.Services;
         // Listar todas transações
         public List<Transaction> GetAll()
         {
-            return _context.Transactions.ToList();
+            return _context.Transactions.Include(t => t.Person).ToList();
         }
         
     }

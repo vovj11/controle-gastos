@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { getTransactions, createTransaction } from "../services/api";
-import type { Transaction, CreateTransaction } from "../types/Transaction";
+import { getTransactions, createTransaction } from "../../services/api";
+import type { Transaction, CreateTransaction } from "../../types/Transaction";
+import "./Transactions.css";
 
 // Componente principal para exibir e criar transações
 export function Transactions() {
@@ -60,19 +61,32 @@ export function Transactions() {
     }
   }
 
+  function formatCurrency(value: number) {
+    return value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+  }
+
+  function getTypeLabel(type: number) {
+    return type === 1 ? "Receita" : "Despesa";
+  }
+
   return (
-    <div style={{ padding: 20 }}>
-      <div>Controle de Transações</div>
+    <div className="container">
+      <div className="title">Controle de Transações</div>
 
       {/* Formulário de criação de transação */}
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
+          className="input"
           placeholder="Descrição"
           value={form.description}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
         />
 
         <input
+          className="input"
           type="number"
           placeholder="Valor"
           value={form.value}
@@ -87,16 +101,30 @@ export function Transactions() {
           <option value={2}>Despesa</option>
         </select>
 
-        <button type="submit">Salvar</button>
+        <button className="button" type="submit">
+          Salvar
+        </button>
       </form>
 
       <hr />
 
       {/* Lista de transações */}
-      <ul>
+      <ul className="list">
         {transactions.map((t) => (
-          <li key={t.id}>
-            {t.description} - R$ {t.value}
+          <li key={t.id} className="card">
+            <div className="card-header">
+              <span className="person">{t.person?.name}</span>
+              <span className={`type ${t.type === 1 ? "revenue" : "expense"}`}>
+                {getTypeLabel(t.type)}
+              </span>
+            </div>
+
+            <div className="card-body">
+              <p className="description">{t.description}</p>
+              <span className={`value ${t.type === 1 ? "revenue" : "expense"}`}>
+                {formatCurrency(t.value)}
+              </span>
+            </div>
           </li>
         ))}
       </ul>

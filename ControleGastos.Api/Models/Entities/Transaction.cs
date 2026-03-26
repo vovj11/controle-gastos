@@ -12,12 +12,12 @@ namespace ControleGastos.Api.Models.Entities;
 
         // Foreign Key -> Pessoa
         public int PersonId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public Person? Person { get; set; }
 
         // Foreign Key -> Categoria
         public int CategoryId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public Category? Category { get; set; }
 
     }

@@ -1,0 +1,98 @@
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #0b121e;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.input {
+  pdding: 8px;
+  border-radius: 4px;
+  border: 1px solid #2e2e2e;
+}
+
+.button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #00aaee;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: #008fcc;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* CARD */
+
+.card {
+  border: 1px solid #2c3547;
+  border-radius: 10px;
+  padding: 12px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  background-color: #232c3f;
+}
+
+/* CARD HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.person {
+  font-size: 1.25rem;
+  color: #aabbcc;
+}
+
+.type {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  border: 1px solid #2c3547;
+}
+
+/* CARD BODY */
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.revenue {
+  color: #22bb55;
+  font-weight: bold;
+}
+
+.expense {
+  color: #cc3355;
+  font-weight: bold;
+}

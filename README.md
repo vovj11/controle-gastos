@@ -178,6 +178,13 @@ Nessa etapa foi criado os controllers responsáveis por expor os endpoints da AP
 2. Aplicação do middleware com UseCors
 3. Liberação de requisições do frontend (localhost:5173)
 
+##### 2 - Inclusão de dados relacionados nas transações
+
+1. Utilização do Include no TransactionService para trazer dados da entidade Person
+2. Remoção do JsonIgnore das propriedades de navegação (Person e Category) da entidade Transaction
+3. Configuração da serialização JSON no Program.cs para evitar loops de referência
+4. Ajuste no retorno da API para incluir dados completos das entidades relacionadas
+
 ---
 
 ### Status atual
@@ -194,6 +201,8 @@ Nessa etapa foi criado os controllers responsáveis por expor os endpoints da AP
 - Endpoints funcionando
 - Testes realizados via Swagger
 - CORS configurado para permitir requisições do frontend
+- Retorno de dados relacionados (Person) nas transações
+- Configuração de serialização para evitar ciclos (loops) no JSON
 
 ---
 
@@ -315,6 +324,45 @@ Nesta etapa foi criada a interface para exibição e cadastro de transações, i
 2. Definição de valores padrão para CategoryId
 3. Garantia de compatibilidade com dados existentes no banco
 
+###### 6.6 - Exibição de dados relacionados:
+
+1. Ajuste da tipagem Transaction para incluir o objeto Person
+2. Utilização de optional chaining para acesso seguro (person?.name)
+3. Exibição do nome da pessoa na lista de transações
+
+#### Etapa 7 - Estilização da interface
+
+Nesta etapa foi realizada a melhoria visual da aplicação, focando em organização e UX.
+
+##### Passos realizados:
+
+##### 7.1 - Estrutura de estilos:
+
+1. Criação de pasta styles para organização dos arquivos CSS (reset e global)
+2. Separação dos estilos por responsabilidade
+
+##### 7.2 - Layout e componentes:
+
+1. Criação de container principal centralizado
+2. Definição de background global com cor mais suave
+3. Estilização da lista de transações com cards
+
+##### 7.3 - Exibição das transações:
+
+1. Criação de layout com informações organizadas:
+   - Nome da pessoa
+   - Tipo da transação (Receita/Despesa)
+   - Descrição
+   - Valor formatado
+2. Aplicação de cores para diferenciação de valores e tipo
+3. Criação de elementos visuais com bordas e hierarquia de informação
+
+##### 7.4 - Interações visuais:
+
+1. Definição de cores padrão da aplicação
+2. Implementação de hover em botões
+3. Melhoria da legibilidade e contraste
+
 ---
 
 ### Status atual
@@ -329,3 +377,8 @@ Nesta etapa foi criada a interface para exibição e cadastro de transações, i
 - Integração front-end e back-end funcionando
 - Criação e listagem de transações
 - Comunicação via HTTPS corrigida
+- Estrutura de estilos css organizadas
+- Reset de estilos aplicado
+- Exibição do nome da pessoas nas transações
+- Tipagem atualizada para suportar dados relacionados
+- Interface melhorada com layout em cards
