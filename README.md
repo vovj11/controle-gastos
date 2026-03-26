@@ -170,6 +170,14 @@ Nessa etapa foi criado os controllers responsáveis por expor os endpoints da AP
    - Listagem de dados
    - Validação das regras de negócio (erros e sucessos)
 
+#### Ajustes no back-end:
+
+##### 1 - Ajustes no backend para integração
+
+1. Configuração de CORS no Program.cs com AddCors
+2. Aplicação do middleware com UseCors
+3. Liberação de requisições do frontend (localhost:5173)
+
 ---
 
 ### Status atual
@@ -185,6 +193,7 @@ Nessa etapa foi criado os controllers responsáveis por expor os endpoints da AP
 - Controllers implementados
 - Endpoints funcionando
 - Testes realizados via Swagger
+- CORS configurado para permitir requisições do frontend
 
 ---
 
@@ -276,6 +285,38 @@ Nesta etapa foi criada a camada responsável pela comunicação com os endpoints
 
 ---
 
+#### Etapa 6 - Criação da tela de transações e integração com API
+
+Nesta etapa foi criada a interface para exibição e cadastro de transações, integrando o front-end com o back-end.
+
+##### Passos realizados:
+
+###### 6.2 - Implementação do formulário de criação:
+
+1. Criação de formulário controlado
+2. Captura dos dados de entrada (descrição, valor e tipo)
+3. Envio dos dados para API utilizando o TransactionService
+4. Atualização automática da lista após criação
+
+###### 6.3 - Integração com o App:
+
+1. Importação do componente Transactions no App.tsx
+2. Renderização da página principal com
+
+###### 6.4 - Ajustes na comunicação com API:
+
+1. Alteração da API_URL para utilizar HTTPS
+2. Correção de erro de conexão (Failed to fetch)
+3. Adequação ao redirecionamento automático do backend (HTTP → HTTPS)
+
+###### 6.5 - Ajustes de dados para testes:
+
+1. Definição de valores padrão para PersonId
+2. Definição de valores padrão para CategoryId
+3. Garantia de compatibilidade com dados existentes no banco
+
+---
+
 ### Status atual
 
 - Projeto criado com React + TypeScript (Vite)
@@ -284,3 +325,7 @@ Nesta etapa foi criada a camada responsável pela comunicação com os endpoints
 - Tratamento de erro nas requisições da API
 - Tipagens criadas para representação de dados (Transaction e CreateTransaction)
 - Comunicação com API configurada utilizando fetch
+- Tela de transações implementadas
+- Integração front-end e back-end funcionando
+- Criação e listagem de transações
+- Comunicação via HTTPS corrigida

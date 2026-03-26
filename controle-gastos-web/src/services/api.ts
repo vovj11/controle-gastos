@@ -1,7 +1,7 @@
 import type { CreateTransaction } from "../types/Transaction";
 
 // URL base da API que será utilizada em todas as requisições
-const API_URL = "http://localhost:7063/api";
+const API_URL = "https://localhost:7063/api";
 
 // Exporta a função para obter as transações
 export async function getTransactions() {

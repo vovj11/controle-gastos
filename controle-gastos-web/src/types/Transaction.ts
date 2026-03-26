@@ -4,7 +4,7 @@ export type Transaction = {
   description: string;
   value: number;
   type: number;
-  PersonId: number;
+  personId: number;
   categoryId: number;
 };
 
@@ -13,6 +13,6 @@ export type CreateTransaction = {
   description: string;
   value: number;
   type: number;
-  PersonId: number;
+  personId: number;
   categoryId: number;
 };
