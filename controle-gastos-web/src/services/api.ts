@@ -74,7 +74,13 @@ export async function createCategory(data: {
     throw error;
   }
 
-  return response.json();
+  let error;
+  try {
+    error = await response.json();
+  } catch {
+    error = { message: "Erro desconhecido" };
+  }
+  throw error;
 }
 
 export async function getCategories() {

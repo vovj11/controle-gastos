@@ -55,7 +55,7 @@ export function Categories() {
         <input
           className="input"
           type="text"
-          placeholder="Escolha a categoria"
+          placeholder="Nome da categoria"
           value={form.description}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
         />
@@ -83,7 +83,13 @@ export function Categories() {
             <p className={`category-purpose`}>
               Finalidade:
               <span
-                className={`category-purpose ${getPurposeLabel(c.purpose)}`}
+                className={`category-purpose ${
+                  c.purpose === 1
+                    ? "receita"
+                    : c.purpose === 2
+                      ? "despesa"
+                      : "ambas"
+                }`}
               >
                 {getPurposeLabel(c.purpose)}
               </span>

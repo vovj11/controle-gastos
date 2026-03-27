@@ -23,6 +23,16 @@ export function Persons() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
+    if (!form.name) {
+      alert("Informe o nome");
+      return;
+    }
+
+    if (!form.age || form.age <= 0) {
+      alert("Informe uma idade válida");
+      return;
+    }
+
     try {
       await createPerson({
         name: form.name,

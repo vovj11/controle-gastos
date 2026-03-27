@@ -100,14 +100,14 @@ input[type="number"] {
   color: #aabbcc;
 }
 
-.category-purpose.Receita {
+.category-purpose.receita {
   color: #22bb55;
 }
 
-.category-purpose.Despesa {
+.category-purpose.despesa {
   color: #cc3355;
 }
 
-.category-purpose.Ambas {
+.category-purpose.ambas {
   color: #eeaa00;
 }

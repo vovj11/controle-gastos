@@ -330,6 +330,18 @@ Nesta etapa foi criada a interface para exibição e cadastro de transações, i
 2. Utilização de optional chaining para acesso seguro (person?.name)
 3. Exibição do nome da pessoa na lista de transações
 
+###### 6.7 - Associação de pessoa na transação:
+
+1. Adição de select para escolha da pessoa
+2. Carregamento dinâmico das pessoas via API
+3. Associação da transação com a pessoa selecionada
+
+###### 6.8 - Estrutura inicial para categorias:
+
+1. Preparação do formulário para suportar categoria
+2. Ajustes no envio da transação incluindo categoryId
+3. Integração inicial com dados de categorias
+
 #### Etapa 7 - Estilização da interface
 
 ##### Passos realizados:
@@ -459,3 +471,5 @@ Nesta etapa foi implementado o sistema de navegação da aplicação.
 - Atualização automática da lista de categorias após cadastro
 - Criação do menu (Navbar)
 - Implementação da navegação entre as páginas
+- Associação de transações com pessoas implementada
+- Estrutura preparada para associação com categorias
