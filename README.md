@@ -419,6 +419,18 @@ Nesta etapa foi implementada a funcionalidade de cadastro e listagem de categori
 1. Reutilização do padrão visual existente
 2. Aplicação de layout consistente com as demais telas
 
+#### Etapa 10 - Navegação entre páginas
+
+Nesta etapa foi implementado o sistema de navegação da aplicação.
+
+##### Passos realizados:
+
+1. Instalação e configuração do React Router Dom
+2. Definição das rotas para cada página
+3. Criação de componente de menu (Navbar)
+4. Implementação de navegação entre transações, pessoas e categorias
+5. Destaque visual da página ativa
+
 ---
 
 ### Status atual
@@ -445,3 +457,5 @@ Nesta etapa foi implementada a funcionalidade de cadastro e listagem de categori
 - Cadastro de categorias implementado no front-end
 - Listagem de categorias integrada com a API
 - Atualização automática da lista de categorias após cadastro
+- Criação do menu (Navbar)
+- Implementação da navegação entre as páginas
