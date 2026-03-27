@@ -109,17 +109,17 @@ export function Transactions() {
       <hr />
 
       {/* Lista de transações */}
-      <ul className="list">
+      <ul className="transaction-list">
         {transactions.map((t) => (
-          <li key={t.id} className="card">
-            <div className="card-header">
+          <li key={t.id} className="transaction-card">
+            <div className="transaction-card-header">
               <span className="person">{t.person?.name}</span>
               <span className={`type ${t.type === 1 ? "revenue" : "expense"}`}>
                 {getTypeLabel(t.type)}
               </span>
             </div>
 
-            <div className="card-body">
+            <div className="transaction-card-body">
               <p className="description">{t.description}</p>
               <span className={`value ${t.type === 1 ? "revenue" : "expense"}`}>
                 {formatCurrency(t.value)}

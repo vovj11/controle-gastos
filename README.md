@@ -332,8 +332,6 @@ Nesta etapa foi criada a interface para exibição e cadastro de transações, i
 
 #### Etapa 7 - Estilização da interface
 
-Nesta etapa foi realizada a melhoria visual da aplicação, focando em organização e UX.
-
 ##### Passos realizados:
 
 ##### 7.1 - Estrutura de estilos:
@@ -363,6 +361,36 @@ Nesta etapa foi realizada a melhoria visual da aplicação, focando em organiza�
 2. Implementação de hover em botões
 3. Melhoria da legibilidade e contraste
 
+#### Etapa 8 - Cadastro de pessoas
+
+Nesta etapa foi implementada a funcionalidade de cadastro e listagem de pessoas no front-end.
+
+##### Passos realizados:
+
+###### 8.1 - Integração com API:
+
+1. Criação dos métodos de listagem e criação de pessoas
+2. Comunicação com o endpoint Person do backend
+
+###### 8.2 - Criação da interface:
+
+1. Implementação de formulário controlado
+2. Captura de nome e idade
+3. Envio dos dados para API
+
+###### 8.3 - Exibição dos dados:
+
+1. Listagem das pessoas cadastradas
+2. Atualização automática após criação
+
+###### 8.4 - Estilização:
+
+1. Reutilização do padrão visual existente
+2. Aplicação de layout consistente com a tela de transações
+3. Ajuste na estilização do formulário
+
+Nesta etapa foi realizada a melhoria visual da aplicação, focando em organização e UX.
+
 ---
 
 ### Status atual
@@ -382,3 +410,7 @@ Nesta etapa foi realizada a melhoria visual da aplicação, focando em organiza�
 - Exibição do nome da pessoas nas transações
 - Tipagem atualizada para suportar dados relacionados
 - Interface melhorada com layout em cards
+- Cadastro de pessoas implementado no front-end
+- Listagem de pessoas integrada com a API
+- Formulário de cadastro de pessoas e transações estilizado e padronizado com a interface
+- Atualização automática da lista de pessoas após cadastro

@@ -33,3 +33,25 @@ export async function createTransaction(data: CreateTransaction) {
 
   return response.json();
 }
+
+export async function createPerson(data: { name: string; age: number }) {
+  const response = await fetch(`${API_URL}/Person`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw error;
+  }
+
+  return response.json();
+}
+
+export async function getPersons() {
+  const response = await fetch(`${API_URL}/Person`);
+  return response.json();
+}
