@@ -1,0 +1,113 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: #0f172a;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+}
+
+.form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background: #0b121e;
+  color: #fff;
+  outline: none;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+
+.form input:focus {
+  border-color: #00aaee;
+  box-shadow: 0 0 0 1px #00aaee;
+}
+
+.form input::placeholder {
+  color: #6b7280;
+}
+
+.form button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #00aaee;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+.form button:hover {
+  background: #008fcc;
+}
+
+.form button:active {
+  transform: scale(0.97);
+}
+
+.category-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 180px;
+  flex: 1 1 200px;
+}
+
+.category-card:hover {
+  background-color: #232c3f;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.category-name {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.category-purpose {
+  color: #aabbcc;
+}
+
+.category-purpose.Receita {
+  color: #22bb55;
+}
+
+.category-purpose.Despesa {
+  color: #cc3355;
+}
+
+.category-purpose.Ambas {
+  color: #eeaa00;
+}

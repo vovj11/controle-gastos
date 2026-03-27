@@ -13,7 +13,7 @@ export function Transactions() {
     description: "",
     value: 0,
     type: 1,
-    personId: 1,
+    personId: 6,
     categoryId: 2,
   });
 
@@ -49,7 +49,7 @@ export function Transactions() {
         description: "",
         value: 0,
         type: 1,
-        personId: 1,
+        personId: 6,
         categoryId: 2,
       });
     } catch (error: unknown) {

@@ -391,6 +391,34 @@ Nesta etapa foi implementada a funcionalidade de cadastro e listagem de pessoas 
 
 Nesta etapa foi realizada a melhoria visual da aplicação, focando em organização e UX.
 
+#### Etapa 9 - Cadastro de categorias
+
+Nesta etapa foi implementada a funcionalidade de cadastro e listagem de categorias no front-end.
+
+##### Passos realizados:
+
+###### 9.1 - Integração com API:
+
+1. Criação dos métodos de listagem e criação de categorias
+2. Comunicação com o endpoint Category do backend
+
+###### 9.2 - Criação da interface:
+
+1. Implementação de formulário controlado
+2. Captura de nome e tipo da categoria (Receita, Despesa ou Ambas)
+3. Envio dos dados para API
+
+###### 9.3 - Exibição dos dados:
+
+1. Listagem das categorias cadastradas
+2. Conversão do enum para texto amigável
+3. Atualização automática após criação
+
+###### 9.4 - Estilização:
+
+1. Reutilização do padrão visual existente
+2. Aplicação de layout consistente com as demais telas
+
 ---
 
 ### Status atual
@@ -413,4 +441,7 @@ Nesta etapa foi realizada a melhoria visual da aplicação, focando em organiza�
 - Cadastro de pessoas implementado no front-end
 - Listagem de pessoas integrada com a API
 - Formulário de cadastro de pessoas e transações estilizado e padronizado com a interface
-- Atualização automática da lista de pessoas após cadastro
+- Atualização automática da lista de categorias após cadastro
+- Cadastro de categorias implementado no front-end
+- Listagem de categorias integrada com a API
+- Atualização automática da lista de categorias após cadastro

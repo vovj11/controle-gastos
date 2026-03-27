@@ -31,6 +31,7 @@ export async function createTransaction(data: CreateTransaction) {
     throw error;
   }
 
+  // Se a resposta for bem-sucedida, converte para JSON e retorna os dados da transação criada
   return response.json();
 }
 
@@ -53,5 +54,30 @@ export async function createPerson(data: { name: string; age: number }) {
 
 export async function getPersons() {
   const response = await fetch(`${API_URL}/Person`);
+  return response.json();
+}
+
+export async function createCategory(data: {
+  description: string;
+  purpose: number;
+}) {
+  const response = await fetch(`${API_URL}/Category`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw error;
+  }
+
+  return response.json();
+}
+
+export async function getCategories() {
+  const response = await fetch(`${API_URL}/Category`);
   return response.json();
 }
