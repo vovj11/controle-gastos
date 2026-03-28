@@ -87,6 +87,19 @@ Nesta etapa foi configurado o Entity Framework com SQL Server.
 6. Criação do banco de dados
    - Update-Database (aplica a migration e cria o banco de dados)
 
+###### 3.2 - Recriação das migrations e banco de dados
+
+1. Remoção das migrations anteriores
+2. Criação de uma nova migration inicial atualizada
+   - dotnet ef migrations add InitialCreate
+3. Atualização do banco de dados com a nova estrutura
+   - dotnet ef database update
+4. Criação do banco ControleGastosDb no SQL Server LocalDB
+5. Validação da criação das tabelas:
+   - Categories
+   - Persons
+   - Transactions
+
 #### Etapa 4 - Implementação de Services
 
 Nesta etapa foi criada a camada de serviços responsável pela lógica de negócio da aplicação.
@@ -130,6 +143,10 @@ Nesta etapa foi criada a camada de serviço para gerenciamento de categorias.
    - Criar categoria
    - Listar categorias
 6. Registro do service no Program.cs
+7. Validação de compatibilidade entre categoria e tipo de transação:
+   - Categorias do tipo "Ambas" podem ser utilizadas em qualquer transação
+   - Categorias de Receita só podem ser usadas em transações de Receita
+   - Categorias de Despesa só podem ser usadas em transações de Despesa
 
 #### Etapa 5 - Criação dos Controllers
 
@@ -203,6 +220,9 @@ Nessa etapa foi criado os controllers responsáveis por expor os endpoints da AP
 - CORS configurado para permitir requisições do frontend
 - Retorno de dados relacionados (Person) nas transações
 - Configuração de serialização para evitar ciclos (loops) no JSON
+- Banco de dados recriado com nova migration inicial
+- Estrutura validada no SQL Server Management Studio
+- Regras de validação entre categoria e transação implementadas
 
 ---
 
@@ -425,6 +445,8 @@ Nesta etapa foi implementada a funcionalidade de cadastro e listagem de categori
 1. Listagem das categorias cadastradas
 2. Conversão do enum para texto amigável
 3. Atualização automática após criação
+4. Correção da atualização automática da lista após criação
+5. Ajuste no fluxo de requisição para garantir consistência dos dados exibidos
 
 ###### 9.4 - Estilização:
 
@@ -473,3 +495,4 @@ Nesta etapa foi implementado o sistema de navegação da aplicação.
 - Implementação da navegação entre as páginas
 - Associação de transações com pessoas implementada
 - Estrutura preparada para associação com categorias
+- Atualização automática da lista de categorias após cadastro (Correção)

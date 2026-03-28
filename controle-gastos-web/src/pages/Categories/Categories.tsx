@@ -12,9 +12,13 @@ export function Categories() {
   });
 
   const loadCategories = async () => {
-    const data = await getCategories();
-    console.log(data);
-    setCategories(data);
+    try {
+      const data = await getCategories();
+      console.log("Categorias carregadas:", data);
+      setCategories(data);
+    } catch (error) {
+      console.error("Erro ao carregar categorias:", error);
+    }
   };
 
   useEffect(() => {

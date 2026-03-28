@@ -34,18 +34,24 @@ namespace ControleGastos.Api.Services;
             if (category == null)
                 throw new Exception("Categoria não encontrada.");
 
-            // Valida se a categoria é compatível com o tipo da transação pois não é permitido categoria de despesa em transações do tipo receita
-            if (transaction.Type == Models.Enums.TransactionType.Receita &&
-                category.Purpose == Models.Enums.CategoryPurpose.Despesa)
-                throw new Exception("Categoria de despesa não pode ser usada para receita.");
+        // Valida se a categoria é compatível com o tipo da transação pois não é permitido categoria de despesa em transações do tipo receita
+        if (transaction.Type == Models.Enums.TransactionType.Receita &&
+            category.Purpose != Models.Enums.CategoryPurpose.Receita &&
+            category.Purpose != Models.Enums.CategoryPurpose.Ambas)
+        {
+            throw new Exception("Categoria inválida para receita.");
+        }
 
-            // Valida se a categoria é compatível com o tipo da transação pois não é permitido categoria de receita em transações do tipo despesa
-            if (transaction.Type == Models.Enums.TransactionType.Despesa &&
-                category.Purpose == Models.Enums.CategoryPurpose.Receita)
-                throw new Exception("Categoria de receita não pode ser usada para despesa.");
+        // Valida se a categoria é compatível com o tipo da transação pois não é permitido categoria de receita em transações do tipo despesa
+        if (transaction.Type == Models.Enums.TransactionType.Despesa &&
+            category.Purpose != Models.Enums.CategoryPurpose.Despesa &&
+            category.Purpose != Models.Enums.CategoryPurpose.Ambas)
+        {
+            throw new Exception("Categoria inválida para despesa.");
+        }
 
-            // Adiciona a transação ao contexto
-            _context.Transactions.Add(transaction);
+        // Adiciona a transação ao contexto
+        _context.Transactions.Add(transaction);
             // Salva as alterações no banco de dados
             _context.SaveChanges();
 
@@ -56,7 +62,7 @@ namespace ControleGastos.Api.Services;
         // Listar todas transações
         public List<Transaction> GetAll()
         {
-            return _context.Transactions.Include(t => t.Person).ToList();
+            return _context.Transactions.Include(t => t.Person).Include(t => t.Category).ToList();
         }
         
     }

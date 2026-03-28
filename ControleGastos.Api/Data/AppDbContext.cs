@@ -15,5 +15,15 @@ namespace ControleGastos.Api.Data;
         public DbSet<Person> Persons { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+
+    // Deleta o comportamento de exclusão em cascata para a relação entre Transaction e Person.
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.Person)
+            .WithMany(p => p.Transactions)
+            .HasForeignKey(t => t.PersonId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
 }
 

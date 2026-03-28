@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleGastos.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260323225746_InitialCreate")]
+    [Migration("20260327235110_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
